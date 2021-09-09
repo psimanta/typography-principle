@@ -1,0 +1,1 @@
+export const INTRO_IMAGE_URL = "https://api.unsplash.com/photos/vyPVtz5p8D4"

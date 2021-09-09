@@ -1,8 +1,15 @@
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
+import { connect } from "react-redux";
 import "./Intro.css";
 
-const Intro = () => {
+const mapStateToProps = ({ introImageUrl }) => {
+    return {
+        introImageUrl: introImageUrl
+    }
+}
+
+const Intro = ({ introImageUrl }) => {
     let heading1Box = useRef(null);
     let heading2Box = useRef(null);
     let heading1 = useRef(null);
@@ -35,10 +42,10 @@ const Intro = () => {
                 <div className="heading1-box" ref={el => { heading1Box = el }}></div>
             </div>
             <div className="intro-lower">
-                <p>H</p>
+                {introImageUrl ? <img src={introImageUrl} width="50%" alt="Intro" /> : ""}
             </div>
         </div>
     )
 }
 
-export default Intro;
+export default connect(mapStateToProps)(Intro);
