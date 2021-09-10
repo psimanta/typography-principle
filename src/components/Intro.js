@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
 import { connect } from "react-redux";
-import "./Intro.css";
+import "./Intro.scss";
 
 const mapStateToProps = ({ introImageUrl }) => {
     return {
@@ -13,7 +13,7 @@ const Intro = ({ introImageUrl }) => {
     let heading1Box = useRef(null);
     let heading2Box = useRef(null);
     let heading1 = useRef(null);
-    let heading2 = useRef(null);
+    let introLower = useRef(null);
     let tl = gsap.timeline()
     useEffect(() => {
         tl
@@ -32,17 +32,32 @@ const Intro = ({ introImageUrl }) => {
                 height: 0,
                 duration: 1.5
             }, "3")
-    }, [])
+            .to(introLower, {
+                opacity: 1,
+                duration: 2
+            }, "4")
+    }, []);
+
     return (
         <div className="intro">
             <div className="heading">
-                <h1 className="heading2" ref={el => { heading2 = el }}>PRINCIPLES</h1>
+                <p className="heading2">PRINCIPLES</p>
                 <div className="heading2-box" ref={el => { heading2Box = el }}></div>
-                <h1 className="heading1" ref={el => { heading1 = el }}>TYPOGRAPHY</h1>
+                <p className="heading1" ref={el => { heading1 = el }}>TYPOGRAPHY</p>
                 <div className="heading1-box" ref={el => { heading1Box = el }}></div>
             </div>
-            <div className="intro-lower">
-                {introImageUrl ? <img src={introImageUrl} width="50%" alt="Intro" /> : ""}
+            <div className="intro-lower" ref={el => { introLower = el }}>
+                <div className="intro-img-container">
+                    {introImageUrl ? <img src={introImageUrl} alt="Intro" width="90%" /> : ""}
+                </div>
+                <div className="intro-lower-text">
+                    <p>
+                        More complex work with typography is becoming popular in web and web design is becoming more like posters and graphic design.
+                        <br />
+                        <br />
+                        Obys agency is pleased to share with you some of our principles of working with typography that will help improve your experience.
+                    </p>
+                </div>
             </div>
         </div>
     )

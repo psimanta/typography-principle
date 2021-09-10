@@ -1,7 +1,8 @@
 import * as ACTION_TYPES from "./actionTypes";
 
 const initState = {
-    introImageUrl: null
+    introImageUrl: null,
+    gallery: []
 }
 
 const rootReducer = (state = initState, { type, payload }) => {
@@ -10,6 +11,11 @@ const rootReducer = (state = initState, { type, payload }) => {
             return {
                 ...state,
                 introImageUrl: payload
+            }
+        case ACTION_TYPES.SET_GALLERY_IMAGE:
+            return {
+                ...state,
+                gallery: payload
             }
         default:
             return state
