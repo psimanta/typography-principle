@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import "./Gallery.scss";
-
+gsap.registerPlugin(ScrollTrigger);
 const mapStateToProps = ({ gallery }) => {
     return {
         gallery: gallery
@@ -13,19 +13,21 @@ const mapStateToProps = ({ gallery }) => {
 const Gallery = ({ gallery }) => {
     let galleryEl = useRef(null);
     let imgGroup = useRef(null);
-    gsap.registerPlugin(ScrollTrigger);
+    let tl = gsap.timeline();
     useEffect(() => {
-        gsap.to(imgGroup, {
-            y: 300,
-            duration: 2,
-            scrollTrigger: {
-                trigger: imgGroup,
-                start: "top center",
-                end: "top top",
-                scrub: true,
-                id: "scrub"
-            }
-        })
+        tl
+            .from(imgGroup, {
+                scrollTrigger: {
+                    trigger: imgGroup,
+                    start: "top center",
+                    end: "top top",
+                    scrub: true,
+                    id: "scrub",
+                    toggleActions: "restart pause reverse pause"
+                },
+                y: 300,
+                duration: 2,
+            })
     }, [])
     return (
         <div className="gallery" ref={el => { galleryEl = el }}>

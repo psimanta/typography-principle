@@ -1,6 +1,7 @@
 import './App.scss';
 import Intro from "./components/Intro";
 import Gallery from './components/Gallery';
+import Fonts from './components/Fonts';
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import { getIntroImage, getGalleryImage } from "./redux/actionCreators";
@@ -22,9 +23,7 @@ function App({ getIntroImage, getGalleryImage }) {
     <div>
       <Intro />
       <Gallery />
-      <div style={{ height: "1000px" }}>
-        Hello
-      </div>
+      <Fonts />
     </div>
 
   );
