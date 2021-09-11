@@ -3,6 +3,7 @@
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 40px;
+    width: 100vw;
     .heading {
         position: relative;
         top: 0;
@@ -55,3 +56,9 @@
     }
 }
 
+
+.scroll {
+    position: relative;
+    top: 300px;
+    color: white;
+}

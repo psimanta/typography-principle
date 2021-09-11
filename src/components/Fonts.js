@@ -8,19 +8,19 @@ gsap.registerPlugin(ScrollTrigger);
 const Fonts = () => {
     let bgImg = useRef(null);
     useEffect(() => {
-        gsap.from(bgImg, {
-            scrollTrigger: {
-                trigger: bgImg,
-                start: "top center",
-                end: "bottom bottom",
-                scrub: true,
-                id: "scrub",
-                toggleActions: "restart pause reverse pause"
-            },
-            opacity: 0,
-            duration: 3,
-            delay: 0.5,
-        })
+        // gsap.from(bgImg, {
+        //     scrollTrigger: {
+        //         trigger: bgImg,
+        //         start: "top center",
+        //         end: "bottom bottom",
+        //         scrub: true,
+        //         id: "scrub",
+        //         toggleActions: "restart pause reverse pause"
+        //     },
+        //     opacity: 0,
+        //     duration: 3,
+        //     delay: 0.5,
+        // })
     })
     return (
         <div className="fonts">

@@ -1,41 +1,44 @@
 .gallery {
     color: white;
-    margin-left: 50px;
     margin-right: 50px;
     position: relative;
-    top: 100px;
+    left: 0px;
+    top: -410px;
+    width: 200vw;
     p {
         position: absolute;
         text-align: center;
-        left: 0;
+        top: -350px;
+        left: 0px;
         right: 0;
-        font-size: 30vw;
+        font-size: 70vw;
         font-weight: 400px;
         line-height: 0px;
     }
     .img-group {
         position: relative;
-        top: -250px;
+        left: 0px;
+        top: 200px;
         display: flex;
         span {
             flex: 1;
             img {
                 position: relative;
-                width: 75%;
+                width: 40%;
             }
         }
         .gallery-img-1 {
-            top: 550px;
+            top: 340px;
+
         }
         .gallery-img-2 {
-            top: 240px;
+            top: 650px;
         }
         .gallery-img-3 {
-            top: 550px;
+            top: 340px;
         }
         .gallery-img-4 {
-            top: 240px;
-            right: 0;
+            top: 650px;
         }
     }
 }

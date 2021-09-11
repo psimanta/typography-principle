@@ -1,4 +1,13 @@
 body {
     background-color: black;
+    overflow-x: hidden;
 }
 
+.app {
+    width: 600%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    section {
+    }
+}

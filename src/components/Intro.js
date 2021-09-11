@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
+import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import { connect } from "react-redux";
 import "./Intro.scss";
 
@@ -58,6 +59,9 @@ const Intro = ({ introImageUrl }) => {
                         Obys agency is pleased to share with you some of our principles of working with typography that will help improve your experience.
                     </p>
                 </div>
+            </div>
+            <div className="scroll">
+                <PlayCircleFilledIcon fontSize="large" />
             </div>
         </div>
     )

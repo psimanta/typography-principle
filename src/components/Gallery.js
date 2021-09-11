@@ -19,13 +19,13 @@ const Gallery = ({ gallery }) => {
             .from(imgGroup, {
                 scrollTrigger: {
                     trigger: imgGroup,
-                    start: "top center",
-                    end: "top top",
+                    start: "right right",
+                    end: "right right",
                     scrub: true,
                     id: "scrub",
                     toggleActions: "restart pause reverse pause"
                 },
-                y: 300,
+                x: 100,
                 duration: 2,
             })
     }, [])
